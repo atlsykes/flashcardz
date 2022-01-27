@@ -11,10 +11,6 @@ function App () {
         <br />
         <br />
         <Main />
-        <br />
-        <button type='button' class='btn btn-info'>
-          Next
-        </button>
       </div>
     </>
   )
