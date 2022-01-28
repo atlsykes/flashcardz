@@ -8,14 +8,17 @@ const Main = () => {
   const [count, setCount] = useState(0)
   const [reveal, setReveal] = useState(false)
   const [score, setScore] = useState(0)
+  const [firstCard, setFirstCard] = useState(false)
+  const [lastCard, setLastCard] = useState(false)
 
   const increment = () => {
     setReveal(false)
+    setFirstCard(false)
     console.log(`content length = ${content.length}`)
     newCount++
     if (newCount === content.length) {
       newCount--
-      alert('You have reached the end!')
+      setLastCard(true)
       return
     }
     setCount(newCount)
@@ -24,11 +27,13 @@ const Main = () => {
 
   const decrement = () => {
     setReveal(false)
+    setLastCard(false)
     console.log(`content length = ${content.length}`)
     newCount--
     if (newCount === -1) {
       newCount++
-      alert('You have reached the beginning!')
+      setFirstCard(true)
+      // alert('You have reached the beginning!')
       return
     }
     setCount(newCount)
@@ -50,6 +55,20 @@ const Main = () => {
   return (
     <div className='main'>
       <div className='col-12' style={{ textAlign: 'right', marginRight: '2%' }}>
+        {firstCard === true ? (
+          <div class='alert alert-warning' role='alert'>
+            You have reached the beginning!
+          </div>
+        ) : (
+          <div></div>
+        )}
+        {lastCard === true ? (
+          <div class='alert alert-warning' role='alert'>
+            Last card has been reached!
+          </div>
+        ) : (
+          <div></div>
+        )}
         <h5>
           <bold>Score: {newScore}</bold>
         </h5>
@@ -83,7 +102,7 @@ const Main = () => {
           className='btn btn-info'
           onClick={decrement}
         >
-          Previous
+          Prev
         </button>
 
         <button
