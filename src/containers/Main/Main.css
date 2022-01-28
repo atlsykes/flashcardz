@@ -1,3 +1,7 @@
+.button-div {
+  min-height: 10rem;
+}
+
 .card {
 width: 50rem;
 }

@@ -41,6 +41,8 @@ const Main = () => {
   }
 
   const reset = () => {
+    setFirstCard(false)
+    setLastCard(false)
     newScore = 0
     setReveal(false)
     newCount = 0
