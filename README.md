@@ -14,16 +14,17 @@ Flash card web app that I created out of boredom to help with studying for the A
 ## Installation
     
 1. Clone my GH repo to your favorite local react folder: https://github.com/atlsykes/flashcardz.
-2. Navigate to root folder and run NPM INSTALL.
+2. Navigate to root folder and run 'NPM INSTALL'.
 3. To test locally, use 'NPM START'.
     
 ## Usage
     
 1. Access via GH-pages URL: https://atlsykes.github.io/flashcardz/
 2. Read question on card and click 'show' to reveal answer.
-3. Scoring in manual, click '+' if guess right answer. '-'provided in case you accidentally clicked '+'.
+3. Scoring in manual, click '+' if guess right answer. '-' provided in case you accidentally clicked '+'.
 4. Use 'Next' and 'Prev' buttons to navigate through card deck.
-5. That's it, enjoy!
+5. Use 'Reset' to return to first card and reset score to 0.
+6. That's it, enjoy!
     
 ## License
     
