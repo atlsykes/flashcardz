@@ -54,7 +54,7 @@ const Main = () => {
 
   return (
     <div className='main'>
-      <div className='col-12' style={{ textAlign: 'right', marginRight: '2%' }}>
+      <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
         {firstCard === true ? (
           <div class='alert alert-warning' role='alert'>
             You have reached the beginning!
@@ -64,7 +64,7 @@ const Main = () => {
         )}
         {lastCard === true ? (
           <div class='alert alert-warning' role='alert'>
-            Last card has been reached!
+            You have reached the end!
           </div>
         ) : (
           <div></div>
