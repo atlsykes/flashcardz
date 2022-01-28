@@ -22,6 +22,19 @@ const Main = () => {
     console.log(`newCount = ${newCount}`)
   }
 
+  const decrement = () => {
+    setReveal(false)
+    console.log(`content length = ${content.length}`)
+    newCount--
+    if (newCount === -1) {
+      newCount++
+      alert('You have reached the beginning!')
+      return
+    }
+    setCount(newCount)
+    console.log(`newCount = ${newCount}`)
+  }
+
   const reset = () => {
     newScore = 0
     setReveal(false)
@@ -36,8 +49,11 @@ const Main = () => {
 
   return (
     <div className='main'>
-      <div>
-        <h5>Score: {newScore}</h5>
+      <div className='col-12' style={{ textAlign: 'right', marginRight: '2%' }}>
+        <h5>
+          <bold>Score: {newScore}</bold>
+        </h5>
+        <br />
       </div>
       <div className='card'>
         <div className='card-body'>
@@ -58,36 +74,62 @@ const Main = () => {
         </div>
       </div>
       <br />
-      <button type='button' className='btn btn-info' onClick={increment}>
-        Next
-      </button>
-      <br />
-      <span>
+      <div className='button-div col-2'>
         <button
+          style={{ marginBottom: '10%', marginRight: '30%' }}
           type='button'
-          className='btn btn-success btn-sm'
-          onClick={() => {
-            newScore++
-            setScore(newScore)
-          }}
+          className='btn btn-info'
+          onClick={decrement}
         >
-          +
+          Previous
         </button>
+
         <button
+          style={{ marginBottom: '10%' }}
           type='button'
-          className='btn btn-danger btn-sm'
-          onClick={() => {
-            newScore--
-            setScore(newScore)
-          }}
+          className='btn btn-info'
+          onClick={increment}
         >
-          -
+          Next
         </button>
-      </span>
-      <br />
-      <button type='button' className='btn btn-warning' onClick={reset}>
-        Reset
-      </button>
+        <br />
+        <span>
+          <button
+            style={{ marginRight: '20%' }}
+            type='button'
+            className='btn btn-success'
+            onClick={() => {
+              newScore++
+              setScore(newScore)
+            }}
+          >
+            +
+          </button>
+          <button
+            type='button'
+            className='btn btn-danger'
+            onClick={() => {
+              newScore--
+              if (newScore == -1) {
+                alert("Can't have a score of less than 0!")
+                return
+              }
+              setScore(newScore)
+            }}
+          >
+            -
+          </button>
+        </span>
+        <br />
+        <button
+          style={{ marginTop: '10%' }}
+          type='button'
+          className='btn btn-warning'
+          onClick={reset}
+        >
+          Reset
+        </button>
+      </div>
     </div>
   )
 }
