@@ -1,6 +1,7 @@
 import React from 'react'
 import Welcome from './containers/Welcome/Welcome'
 import Main from './containers/Main/Main'
+import Footer from './components/Footer/Footer'
 import './App.css'
 
 function App () {
@@ -11,6 +12,7 @@ function App () {
         <br />
         <br />
         <Main />
+        <Footer />
       </div>
     </>
   )

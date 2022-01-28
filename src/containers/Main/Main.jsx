@@ -57,7 +57,9 @@ const Main = () => {
       </div>
       <div className='card'>
         <div className='card-body'>
-          <h5 className='card-title'>Card# {content[count].id}</h5>
+          <h5 className='card-title' style={{ textAlign: 'left' }}>
+            Card# {content[count].id}
+          </h5>
           <br />
           <h6 className='card-subtitle mb-2 text-muted'>
             {content[count].question}
@@ -110,7 +112,7 @@ const Main = () => {
             className='btn btn-danger'
             onClick={() => {
               newScore--
-              if (newScore == -1) {
+              if (newScore === -1) {
                 alert("Can't have a score of less than 0!")
                 return
               }
