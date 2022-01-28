@@ -2,8 +2,9 @@ import React from 'react'
 
 const welcome = () => {
   return (
-    <div>
-      <h1 className='App-header'>Flashcardz!</h1>
+    <div className='App-header'>
+      <h1>Flashcardz!</h1>
+      <h5>(AWS Cloud Practitioner Certification Training)</h5>
     </div>
   )
 }
