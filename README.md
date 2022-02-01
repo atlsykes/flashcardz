@@ -30,7 +30,7 @@ Flash card web app that I created out of boredom to help with studying for the A
     
 MIT
     
-Copyright (c) [2020] Justin Sykes
+Copyright (c) [2022] Justin Sykes
     
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

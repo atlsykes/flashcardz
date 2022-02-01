@@ -33,7 +33,6 @@ const Main = () => {
     if (newCount === -1) {
       newCount++
       setFirstCard(true)
-      // alert('You have reached the beginning!')
       return
     }
     setCount(newCount)
@@ -58,22 +57,49 @@ const Main = () => {
     <div className='main'>
       <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
         {firstCard === true ? (
-          <div class='alert alert-warning' role='alert'>
+          <div
+            class='alert alert-warning'
+            role='alert'
+            style={{ textAlign: 'center' }}
+          >
             You have reached the beginning!
+            <button
+              type='button'
+              class='btn btn-warning'
+              style={{ marginLeft: '20px' }}
+              onClick={() => {
+                setFirstCard(false)
+              }}
+            >
+              X
+            </button>
           </div>
         ) : (
           <div></div>
         )}
         {lastCard === true ? (
-          <div class='alert alert-warning' role='alert'>
+          <div
+            class='alert alert-warning'
+            role='alert'
+            style={{ textAlign: 'center' }}
+          >
             You have reached the end!
+            <button
+              type='button'
+              class='btn btn-warning'
+              style={{ marginLeft: '20px' }}
+              onClick={() => {
+                setLastCard(false)
+              }}
+            >
+              X
+            </button>
           </div>
         ) : (
           <div></div>
         )}
-        <h5>
-          <bold>Score: {newScore}</bold>
-        </h5>
+        <h5>Score: {newScore}</h5>
+        <i>cards: {content.length}</i>
         <br />
       </div>
       <div className='card'>
@@ -82,7 +108,10 @@ const Main = () => {
             Card# {content[count].id}
           </h5>
           <br />
-          <h6 className='card-subtitle mb-2 text-muted'>
+          <h6
+            className='card-subtitle mb-2 text-muted'
+            style={{ textAlign: 'left' }}
+          >
             {content[count].question}
           </h6>
           <br />
@@ -90,7 +119,9 @@ const Main = () => {
           <br />
           <br />
           {reveal === true ? (
-            <p className='card-text'>{content[count].answer}</p>
+            <p className='card-text' style={{ textAlign: 'left' }}>
+              {content[count].answer}
+            </p>
           ) : (
             <p></p>
           )}
@@ -110,7 +141,7 @@ const Main = () => {
         <button
           style={{ marginBottom: '10%' }}
           type='button'
-          className='btn btn-info'
+          className='btn btn-primary'
           onClick={increment}
         >
           Next
@@ -134,7 +165,7 @@ const Main = () => {
             onClick={() => {
               newScore--
               if (newScore === -1) {
-                alert("Can't have a score of less than 0!")
+                newScore = 0
                 return
               }
               setScore(newScore)
