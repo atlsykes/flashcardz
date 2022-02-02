@@ -14,7 +14,6 @@ const Main = () => {
   const increment = () => {
     setReveal(false)
     setFirstCard(false)
-    console.log(`content length = ${content.length}`)
     newCount++
     if (newCount === content.length) {
       newCount--
@@ -22,13 +21,11 @@ const Main = () => {
       return
     }
     setCount(newCount)
-    console.log(`newCount = ${newCount}`)
   }
 
   const decrement = () => {
     setReveal(false)
     setLastCard(false)
-    console.log(`content length = ${content.length}`)
     newCount--
     if (newCount === -1) {
       newCount++
@@ -36,7 +33,6 @@ const Main = () => {
       return
     }
     setCount(newCount)
-    console.log(`newCount = ${newCount}`)
   }
 
   const reset = () => {
@@ -46,7 +42,6 @@ const Main = () => {
     setReveal(false)
     newCount = 0
     setCount(newCount)
-    console.log(`newCount reset`)
   }
 
   const showAnswer = () => {
@@ -79,14 +74,14 @@ const Main = () => {
         )}
         {lastCard === true ? (
           <div
-            class='alert alert-warning'
+            className='alert alert-warning'
             role='alert'
             style={{ textAlign: 'center' }}
           >
             You have reached the end!
             <button
               type='button'
-              class='btn btn-warning'
+              className='btn btn-warning'
               style={{ marginLeft: '20px' }}
               onClick={() => {
                 setLastCard(false)

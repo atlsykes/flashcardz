@@ -132,32 +132,13 @@ const content = [
     id: 22,
     question:
       'For data protection purposes, it is recommended that you protect AWS account credentials and set up individual user accounts with AWS Identity and Access Management (IAM). That way each user is given only the permissions necessary to fulfill their job duties. It is also recommend that you secure your data in the following ways:',
-    answer: `Use multi-factor authentication (MFA) with each account.
-- Use SSL/TLS to communicate with AWS resources. We recommend TLS 1.2 or later.
-- Set up API and user activity logging with AWS CloudTrail.
-- Use AWS encryption solutions, along with all default security controls within AWS services.
-- Use advanced managed security services such as Amazon Macie, which assists in discovering and securing personal data that is stored in Amazon S3.
-- If you require FIPS 140-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint. For more information about the available FIPS endpoints, see Federal Information Processing Standard (FIPS) 140-2.`
+    answer: `- Use multi-factor authentication (MFA) with each account. - Use SSL/TLS to communicate with AWS resources. We recommend TLS 1.2 or later.- Set up API and user activity logging with AWS CloudTrail. - Use AWS encryption solutions, along with all default security controls within AWS services. - Use advanced managed security services such as Amazon Macie, which assists in discovering and securing personal data that is stored in Amazon S3. - If you require FIPS 140-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint. For more information about the available FIPS endpoints, see Federal Information Processing Standard (FIPS) 140-2.`
   },
   {
     id: 23,
     question:
       'What are some security guidelines and best practices for IAM in AWS?',
-    answer: `- Lock away your AWS account root user access keys
-- Use roles to delegate permissions
-- Grant least privilege
-- Get started using permissions with AWS managed policies
-- Validate your policies
-- Use customer managed policies instead of inline policies
-- Use access levels to review IAM permissions
-- Configure a strong password policy for your users
-- Enable MFA
-- Use roles for applications that run on Amazon EC2 instances
-- Do not share access keys
-- Rotate credentials regularly
-- Remove unnecessary credentials
-- Use policy conditions for extra security
-- Monitor activity in your AWS account`
+    answer: `- Lock away your AWS account root user access keys - Use roles to delegate permissions - Grant least privilege - Get started using permissions with AWS managed policies - Validate your policies - Use customer managed policies instead of inline policies - Use access levels to review IAM permissions - Configure a strong password policy for your users - Enable MFA - Use roles for applications that run on Amazon EC2 instances - Do not share access keys - Rotate credentials regularly - Remove unnecessary credentials - Use policy conditions for extra security - Monitor activity in your AWS account`
   },
   {
     id: 24,
@@ -260,6 +241,68 @@ const content = [
     question:
       '___ ______ ______ provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer. It is ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content, or for data that is replicated across a fleet of instances, such as a load-balanced pool of web servers.',
     answer: 'EC2 Instance Store'
+  },
+  {
+    id: 41,
+    question:
+      'Which system or service provides a simple, serverless, set-and-forget elastic file system for use with AWS Cloud services and on-premises resources that supports the Network File System version 4 (NFSv4.1 and NFSv4.0) protocol? ',
+    answer: 'Amazon Elastic File System (EFS)'
+  },
+  {
+    id: 42,
+    question:
+      'What is the name of a storage class concept which is cost optimized for files not accessed everyday? ',
+    answer: 'EFS - Infrequent Access(IA)'
+  },
+  {
+    id: 43,
+    question:
+      'Which service provides fully managed Microsoft Windows file servers, backed by a fully native Windows file system, and supports a broad set of enterprise Windows workloads with fully managed file storage built on Microsoft Windows Server?',
+    answer: 'Amazon FSx for Windows File Server'
+  },
+  {
+    id: 44,
+    question:
+      'Which file server based service allows you to run the popular, high-performance Lustre file system, that is used for  workloads where speed matters, such as machine learning, high performance computing (HPC), video processing, and financial modeling?',
+    answer: 'Amazon FSx for Lustre'
+  },
+  {
+    id: 45,
+    question: 'What is the definition of vertical scalability related to EC2?',
+    answer:
+      'Ability of a service to increase the size of the instance as you scale up.'
+  },
+  {
+    id: 46,
+    question:
+      'What is the definition of horizontal scalability related to EC2?',
+    answer:
+      'Ability of service to increase the number of  instances/systems for your application as you scale up.'
+  },
+  {
+    id: 47,
+    question:
+      'An AWS concept that refers to having instances/systems for the same app across multiple availability zones. It usually goes hand in hand with horizontal scaling',
+    answer: 'High availability'
+  },
+  {
+    id: 48,
+    question:
+      'A cloud computing concept where streamlining of resource acquisition and release, so that your infrastructure can rapidly scale in and scale out as demand fluctuates.',
+    answer: 'Elasticity'
+  },
+  {
+    id: 49,
+    question:
+      'What is the difference between scalability and elasticity in cloud computing?',
+    answer:
+      'Scalability is the ability to accommodate a larger load by manually adding size and/or instances/systems for an app. Elasticity is cloud intrinsic whereby auto-scaling of instances/systems is accomplished based on current demand/loading.'
+  },
+  {
+    id: 50,
+    question:
+      "A ____ ______ distributes traffic among your environment's instances",
+    answer: 'load balancer'
   }
 ]
 
