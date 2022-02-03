@@ -12,7 +12,7 @@ const content = [
   {
     id: 3,
     question: 'What service provides secure and resizable compute capacity?',
-    answer: 'EC2'
+    answer: 'Amazon Elastic Compute Cloud (EC2)'
   },
   {
     id: 4,
@@ -303,6 +303,72 @@ const content = [
     question:
       "A ____ ______ distributes traffic among your environment's instances",
     answer: 'load balancer'
+  },
+  {
+    id: 51,
+    question:
+      '______ _______ ________ automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets.',
+    answer: 'Elastic Load Balancing (ELB)'
+  },
+  {
+    id: 52,
+    question: 'What are the 4 kinds of load balancers?',
+    answer: `1. An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. It monitors the health of its registered targets, and routes traffic only to the healthy targets. (HTTP/HTTPS). 2. A Network Load Balancer functions at the fourth layer of the Open Systems Interconnection (OSI) model. It can handle millions of requests per second.(TCP) 3. A Classic A load balancer distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones. This increases the fault tolerance of your applications. (original) 4. A Gateway Load Balancer operates at the third layer of the Open Systems Interconnection (OSI) model, the network layer. It listens for all IP packets across all ports and forwards traffic to the target group that's specified in the listener rule. It maintains stickiness of flows to a specific target appliance using 5-tuple (for TCP/UDP flows) or 3-tuple (for non-TCP/UDP flows).`
+  },
+  {
+    id: 53,
+    question:
+      'What type of group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management? It also enables you to use Amazon EC2 features such as health check replacements and scaling policies. ',
+    answer: 'Auto Scaling Group (ASG)'
+  },
+  {
+    id: 54,
+    question: "What are the 2 types of scaling strategies for ASG's?",
+    answer:
+      '1. Manual scaling - the size of an ASG depends on the number of instances that you set as the desired capacity. You can manually adjust its size to meet demand. 2. Dynamic scaling - you can use scaling policies to increase or decrease the number of instances in your group dynamically to meet changing conditions. When the scaling policy is in effect, the Auto Scaling group adjusts the desired capacity of the group, between the minimum and maximum capacity values that you specify, and launches or terminates the instances as needed. '
+  },
+  {
+    id: 55,
+    question:
+      'Which service is an object storage service that offers industry-leading scalability, data availability, security, and performance? It is also considered a main building block for AWS. ',
+    answer: 'Amazon Simple Storage Service (S3)'
+  },
+  {
+    id: 56,
+    question: 'What are some use cases for Amazon S3?',
+    answer:
+      'Backup & storage, disaster recovery, archives, hybrid cloud storage, application hosting, media hosting, software delivery, static website.'
+  },
+  {
+    id: 57,
+    question:
+      'Amazon S3 is an object store that uses unique key-values to store as many objects as you want. You store these objects in one or more buckets, and each object can be up to 5 TB in size. An object consists of the following attributes/characteristics (6):',
+    answer: `- Key > The name that you assign to an object. You use the object key to retrieve the object.
+- Version ID > Within a bucket, a key and version ID uniquely identify an object. The version ID is a string that Amazon S3 generates when you add an object to a bucket.
+- Value > The content that you are storing. An object value can be any sequence of bytes. Objects can range in size from zero to 5 TB. For more information, see Uploading objects.
+- Metadata> A set of name-value pairs with which you can store information regarding the object. You can assign metadata, referred to as user-defined metadata, to your objects in Amazon S3. Amazon S3 also assigns system-metadata to these objects, which it uses for managing objects.
+- Subresources > Amazon S3 uses the subresource mechanism to store object-specific additional information. Because subresources are subordinates to objects, they are always associated with some other entity such as an object or a bucket.
+- Access control information > You can control access to the objects you store in Amazon S3. Amazon S3 supports both the resource-based access control, such as an access control list (ACL) and bucket policies, and user-based access control.`
+  },
+  {
+    id: 58,
+    question: 'What are some use cases for Amazon S3?',
+    answer:
+      'Backup & storage, disaster recovery, archives, hybrid cloud storage, application hosting, media hosting, software delivery, static website.'
+  },
+  {
+    id: 59,
+    question:
+      'What are the 2 categories related to S3 bucket security? policies',
+    answer:
+      '1. Access policies that you attach to your resources (buckets and objects) are referred to as resource-based policies. 2. User based policies attach access policies to users in your account '
+  },
+  {
+    id: 60,
+    question:
+      'What are the 2 categories related to S3 bucket security? policies',
+    answer:
+      '1. Access policies that you attach to your resources (buckets and objects) are referred to as resource-based policies. (IAM) 2. User based policies attach access policies to users in your account. (object or bucket access control lists (ACLs))'
   }
 ]
 

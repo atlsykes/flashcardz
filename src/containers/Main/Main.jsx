@@ -1,8 +1,20 @@
 import content from './content'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Main.css'
 let newCount = 0
 let newScore = 0
+const audioPlus = new Audio(
+  'https://www.freesoundslibrary.com/wp-content/uploads/2021/07/bicycle-bell-ding-sound-effect.mp3'
+)
+const audioMinus = new Audio(
+  'https://www.freesoundslibrary.com/wp-content/uploads/2018/04/game-fail-sound-effect.mp3'
+)
+const audioReset = new Audio(
+  'https://www.freesoundslibrary.com/wp-content/uploads/2018/01/ding-sound-effect.mp3'
+)
+const audioStart = new Audio(
+  'https://www.freesoundslibrary.com/wp-content/uploads/2020/03/dark-transition-sound-effect.mp3'
+)
 
 const Main = () => {
   const [count, setCount] = useState(0)
@@ -36,6 +48,7 @@ const Main = () => {
   }
 
   const reset = () => {
+    audioReset.play()
     setFirstCard(false)
     setLastCard(false)
     newScore = 0
@@ -148,6 +161,7 @@ const Main = () => {
             type='button'
             className='btn btn-success'
             onClick={() => {
+              audioPlus.play()
               newScore++
               setScore(newScore)
             }}
@@ -163,6 +177,7 @@ const Main = () => {
                 newScore = 0
                 return
               }
+              audioMinus.play()
               setScore(newScore)
             }}
           >
