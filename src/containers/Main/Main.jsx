@@ -62,137 +62,139 @@ const Main = () => {
   }
 
   return (
-    <div className='main'>
-      <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
-        {firstCard === true ? (
-          <div
-            class='alert alert-warning'
-            role='alert'
-            style={{ textAlign: 'center' }}
-          >
-            You have reached the beginning!
-            <button
-              type='button'
-              class='btn btn-warning'
-              style={{ marginLeft: '20px' }}
-              onClick={() => {
-                setFirstCard(false)
-              }}
+    <div clasName='container-fluid'>
+      <div className='main'>
+        <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
+          {firstCard === true ? (
+            <div
+              class='alert alert-warning'
+              role='alert'
+              style={{ textAlign: 'center' }}
             >
-              X
-            </button>
-          </div>
-        ) : (
-          <div></div>
-        )}
-        {lastCard === true ? (
-          <div
-            className='alert alert-warning'
-            role='alert'
-            style={{ textAlign: 'center' }}
-          >
-            You have reached the end!
-            <button
-              type='button'
-              className='btn btn-warning'
-              style={{ marginLeft: '20px' }}
-              onClick={() => {
-                setLastCard(false)
-              }}
-            >
-              X
-            </button>
-          </div>
-        ) : (
-          <div></div>
-        )}
-        <h5>Score: {newScore}</h5>
-        <i>cards: {content.length}</i>
-        <br />
-      </div>
-      <div className='card'>
-        <div className='card-body'>
-          <h5 className='card-title' style={{ textAlign: 'left' }}>
-            Card# {content[count].id}
-          </h5>
-          <br />
-          <h6
-            className='card-subtitle mb-2 text-muted'
-            style={{ textAlign: 'left' }}
-          >
-            {content[count].question}
-          </h6>
-          <br />
-          <button onClick={showAnswer}>show</button>
-          <br />
-          <br />
-          {reveal === true ? (
-            <p className='card-text' style={{ textAlign: 'left' }}>
-              {content[count].answer}
-            </p>
+              You have reached the beginning!
+              <button
+                type='button'
+                class='btn btn-warning'
+                style={{ marginLeft: '20px' }}
+                onClick={() => {
+                  setFirstCard(false)
+                }}
+              >
+                X
+              </button>
+            </div>
           ) : (
-            <p></p>
+            <div></div>
           )}
+          {lastCard === true ? (
+            <div
+              className='alert alert-warning'
+              role='alert'
+              style={{ textAlign: 'center' }}
+            >
+              You have reached the end!
+              <button
+                type='button'
+                className='btn btn-warning'
+                style={{ marginLeft: '20px' }}
+                onClick={() => {
+                  setLastCard(false)
+                }}
+              >
+                X
+              </button>
+            </div>
+          ) : (
+            <div></div>
+          )}
+          <h5>Score: {newScore}</h5>
+          <i>cards: {content.length}</i>
+          <br />
         </div>
-      </div>
-      <br />
-      <div className='button-div col-2'>
-        <button
-          style={{ marginBottom: '10%', marginRight: '30%' }}
-          type='button'
-          className='btn btn-info'
-          onClick={decrement}
-        >
-          Prev
-        </button>
+        <div className='card'>
+          <div className='card-body'>
+            <h5 className='card-title' style={{ textAlign: 'left' }}>
+              Card# {content[count].id}
+            </h5>
+            <br />
+            <h6
+              className='card-subtitle mb-2 text-muted'
+              style={{ textAlign: 'left' }}
+            >
+              {content[count].question}
+            </h6>
+            <br />
+            <button onClick={showAnswer}>show</button>
+            <br />
+            <br />
+            {reveal === true ? (
+              <p className='card-text' style={{ textAlign: 'left' }}>
+                {content[count].answer}
+              </p>
+            ) : (
+              <p></p>
+            )}
+          </div>
+        </div>
+        <br />
+        <div className='button-div col-2'>
+          <button
+            style={{ marginBottom: '10%', marginRight: '30%' }}
+            type='button'
+            className='btn btn-info'
+            onClick={decrement}
+          >
+            Prev
+          </button>
 
-        <button
-          style={{ marginBottom: '10%' }}
-          type='button'
-          className='btn btn-primary'
-          onClick={increment}
-        >
-          Next
-        </button>
-        <br />
-        <span>
           <button
-            style={{ marginRight: '20%' }}
+            style={{ marginBottom: '10%' }}
             type='button'
-            className='btn btn-success'
-            onClick={() => {
-              audioPlus.play()
-              newScore++
-              setScore(newScore)
-            }}
+            className='btn btn-primary'
+            onClick={increment}
           >
-            +
+            Next
           </button>
+          <br />
+          <span>
+            <button
+              style={{ marginRight: '20%' }}
+              type='button'
+              className='btn btn-success'
+              onClick={() => {
+                audioPlus.play()
+                newScore++
+                setScore(newScore)
+              }}
+            >
+              +
+            </button>
+            <button
+              type='button'
+              className='btn btn-danger'
+              onClick={() => {
+                newScore--
+                if (newScore === -1) {
+                  newScore = 0
+                  return
+                }
+                audioMinus.play()
+                setScore(newScore)
+              }}
+            >
+              -
+            </button>
+          </span>
+          <br />
           <button
+            style={{ marginTop: '10%' }}
             type='button'
-            className='btn btn-danger'
-            onClick={() => {
-              newScore--
-              if (newScore === -1) {
-                newScore = 0
-                return
-              }
-              audioMinus.play()
-              setScore(newScore)
-            }}
+            className='btn btn-warning'
+            onClick={reset}
           >
-            -
+            Reset
           </button>
-        </span>
-        <br />
-        <button
-          style={{ marginTop: '10%' }}
-          type='button'
-          className='btn btn-warning'
-          onClick={reset}
-        >
-          Reset
-        </button>
+        </div>
       </div>
     </div>
   )

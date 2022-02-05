@@ -132,7 +132,7 @@ const content = [
     id: 22,
     question:
       'For data protection purposes, it is recommended that you protect AWS account credentials and set up individual user accounts with AWS Identity and Access Management (IAM). That way each user is given only the permissions necessary to fulfill their job duties. It is also recommend that you secure your data in the following ways:',
-    answer: `- Use multi-factor authentication (MFA) with each account. - Use SSL/TLS to communicate with AWS resources. We recommend TLS 1.2 or later.- Set up API and user activity logging with AWS CloudTrail. - Use AWS encryption solutions, along with all default security controls within AWS services. - Use advanced managed security services such as Amazon Macie, which assists in discovering and securing personal data that is stored in Amazon S3. - If you require FIPS 140-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint. For more information about the available FIPS endpoints, see Federal Information Processing Standard (FIPS) 140-2.`
+    answer: `- Use multi-factor authentication (MFA) with each account. - Use SSL/TLS to communicate with AWS resources. We recommend TLS 1.2 or later.- Set up API and user activity logging with AWS CloudTrail. - Use AWS encryption solutions, along with all default security controls within AWS services. - Use advanced managed security services such as Amazon Macie, which assists in discovering and securing personal data that is stored in Amazon S3. - If you require FIPS 140-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint.`
   },
   {
     id: 23,
