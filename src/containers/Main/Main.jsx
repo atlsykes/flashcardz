@@ -1,8 +1,10 @@
-import content from './content'
-import React, { useState, useEffect } from 'react'
+import content from '../../content'
+import React, { useState } from 'react'
 import './Main.css'
+import CardList from '../../components/CardList/CardList'
 let newCount = 0
 let newScore = 0
+localStorage.setItem('cardIndex', 0)
 const audioPlus = new Audio(
   'https://www.freesoundslibrary.com/wp-content/uploads/2021/07/bicycle-bell-ding-sound-effect.mp3'
 )
@@ -27,6 +29,7 @@ const Main = () => {
     setReveal(false)
     setFirstCard(false)
     newCount++
+    localStorage.setItem('cardIndex', newCount)
     if (newCount === content.length) {
       newCount--
       setLastCard(true)
@@ -42,6 +45,7 @@ const Main = () => {
     if (newCount === -1) {
       newCount++
       setFirstCard(true)
+      localStorage.setItem('cardIndex', newCount)
       return
     }
     setCount(newCount)
@@ -55,6 +59,7 @@ const Main = () => {
     setReveal(false)
     newCount = 0
     setCount(newCount)
+    localStorage.setItem('cardIndex', newCount)
   }
 
   const showAnswer = () => {
@@ -62,139 +67,149 @@ const Main = () => {
   }
 
   return (
-    <div clasName='container-fluid'>
-      <div className='main'>
-        <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
-          {firstCard === true ? (
-            <div
-              class='alert alert-warning'
-              role='alert'
-              style={{ textAlign: 'center' }}
+    <div className='main'>
+      <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
+        {firstCard === true ? (
+          <div
+            class='alert alert-warning'
+            role='alert'
+            style={{ textAlign: 'center' }}
+          >
+            You have reached the beginning!
+            <button
+              type='button'
+              class='btn btn-warning'
+              style={{ marginLeft: '20px' }}
+              onClick={() => {
+                setFirstCard(false)
+              }}
             >
-              You have reached the beginning!
-              <button
-                type='button'
-                class='btn btn-warning'
-                style={{ marginLeft: '20px' }}
-                onClick={() => {
-                  setFirstCard(false)
-                }}
-              >
-                X
-              </button>
-            </div>
-          ) : (
-            <div></div>
-          )}
-          {lastCard === true ? (
-            <div
-              className='alert alert-warning'
-              role='alert'
-              style={{ textAlign: 'center' }}
-            >
-              You have reached the end!
-              <button
-                type='button'
-                className='btn btn-warning'
-                style={{ marginLeft: '20px' }}
-                onClick={() => {
-                  setLastCard(false)
-                }}
-              >
-                X
-              </button>
-            </div>
-          ) : (
-            <div></div>
-          )}
-          <h5>Score: {newScore}</h5>
-          <i>cards: {content.length}</i>
-          <br />
-        </div>
-        <div className='card'>
-          <div className='card-body'>
-            <h5 className='card-title' style={{ textAlign: 'left' }}>
-              Card# {content[count].id}
-            </h5>
-            <br />
-            <h6
-              className='card-subtitle mb-2 text-muted'
-              style={{ textAlign: 'left' }}
-            >
-              {content[count].question}
-            </h6>
-            <br />
-            <button onClick={showAnswer}>show</button>
-            <br />
-            <br />
-            {reveal === true ? (
-              <p className='card-text' style={{ textAlign: 'left' }}>
-                {content[count].answer}
-              </p>
-            ) : (
-              <p></p>
-            )}
+              X
+            </button>
           </div>
-        </div>
+        ) : (
+          <div></div>
+        )}
+        {lastCard === true ? (
+          <div
+            className='alert alert-warning'
+            role='alert'
+            style={{ textAlign: 'center' }}
+          >
+            You have reached the end!
+            <button
+              type='button'
+              className='btn btn-warning'
+              style={{ marginLeft: '20px' }}
+              onClick={() => {
+                setLastCard(false)
+              }}
+            >
+              X
+            </button>
+          </div>
+        ) : (
+          <div></div>
+        )}
+        <h5>Score: {newScore}</h5>
+        <i>cards: {content.length}</i>
         <br />
-        <div className='button-div col-2'>
-          <button
-            style={{ marginBottom: '10%', marginRight: '30%' }}
-            type='button'
-            className='btn btn-info'
-            onClick={decrement}
-          >
-            Prev
-          </button>
-
-          <button
-            style={{ marginBottom: '10%' }}
-            type='button'
-            className='btn btn-primary'
-            onClick={increment}
-          >
-            Next
-          </button>
+      </div>
+      <div className='card'>
+        <div className='card-body'>
+          <h5 className='card-title' style={{ textAlign: 'left' }}>
+            Card# {content[count].id}
+          </h5>
           <br />
-          <span>
-            <button
-              style={{ marginRight: '20%' }}
-              type='button'
-              className='btn btn-success'
-              onClick={() => {
-                audioPlus.play()
-                newScore++
-                setScore(newScore)
-              }}
-            >
-              +
-            </button>
-            <button
-              type='button'
-              className='btn btn-danger'
-              onClick={() => {
-                newScore--
-                if (newScore === -1) {
-                  newScore = 0
-                  return
-                }
-                audioMinus.play()
-                setScore(newScore)
-              }}
-            >
-              -
-            </button>
-          </span>
-          <br />
-          <button
-            style={{ marginTop: '10%' }}
-            type='button'
-            className='btn btn-warning'
-            onClick={reset}
+          <h6
+            className='card-subtitle mb-2 text-muted'
+            style={{ textAlign: 'left' }}
           >
-            Reset
-          </button>
+            {content[count].question}
+          </h6>
+          <br />
+          <button onClick={showAnswer}>show</button>
+          <br />
+          <br />
+          {/* render a basic answer if no content type is present */}
+          {reveal === true ? (
+            <h6 className='card-text' style={{ textAlign: 'left' }}>
+              {' '}
+              {content[count].answer}
+            </h6>
+          ) : (
+            <p></p>
+          )}
+          {/* render a card list if content type = 'list' */}
+          {(reveal === true) & (content[count].type === 'list') ? (
+            <CardList
+              id={content[count].id}
+              listCount={content[count].listAnswer.length}
+              cardObj={content[count]}
+            />
+          ) : (
+            <p></p>
+          )}
         </div>
+      </div>
+      <br />
+      <div className='button-div col-2'>
+        <button
+          style={{ marginBottom: '10%', marginRight: '30%' }}
+          type='button'
+          className='btn btn-info'
+          onClick={decrement}
+        >
+          Prev
+        </button>
+
+        <button
+          style={{ marginBottom: '10%' }}
+          type='button'
+          className='btn btn-primary'
+          onClick={increment}
+        >
+          Next
+        </button>
+        <br />
+        <span>
+          <button
+            style={{ marginRight: '20%' }}
+            type='button'
+            className='btn btn-success'
+            onClick={() => {
+              audioPlus.play()
+              newScore++
+              setScore(newScore)
+            }}
+          >
+            +
+          </button>
+          <button
+            type='button'
+            className='btn btn-danger'
+            onClick={() => {
+              newScore--
+              if (newScore === -1) {
+                newScore = 0
+                return
+              }
+              audioMinus.play()
+              setScore(newScore)
+            }}
+          >
+            -
+          </button>
+        </span>
+        <br />
+        <button
+          style={{ marginTop: '10%' }}
+          type='button'
+          className='btn btn-warning'
+          onClick={reset}
+        >
+          Reset
+        </button>
       </div>
     </div>
   )
