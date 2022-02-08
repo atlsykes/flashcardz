@@ -1,6 +1,6 @@
 # Flashcardz
 
-![license badge](https://img.shields.io/badge/license-MIT-brightgreen)
+![license badge](https://img.shields.io/badge/license-MIT-brightgreen) ![favicon](./public/favicon.ico)
 
 Flash card web app that I created out of boredom to help with studying for the AWS Cloud Practitioner Certification Exam.
     
