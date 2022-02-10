@@ -386,16 +386,6 @@ const content = [
       '- Subresources > Amazon S3 uses the subresource mechanism to store object-specific additional information. Because subresources are subordinates to objects, they are always associated with some other entity such as an object or a bucket.',
       '- Access control information > You can control access to the objects you store in Amazon S3. Amazon S3 supports both the resource-based access control, such as an access control list (ACL) and bucket policies, and user-based access control.'
     ]
-  },
-  {
-    id: 58,
-    type: 'list',
-    question:
-      'What are the 2 categories related to S3 bucket security policies?',
-    answerList: [
-      '1. Access policies that you attach to your resources (buckets and objects) are referred to as resource-based policies. (IAM)',
-      '2. User based policies attach access policies to users in your account. (object or bucket access control lists (ACLs))'
-    ]
   }
 ]
 

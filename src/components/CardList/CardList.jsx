@@ -5,7 +5,9 @@ const CardList = props => {
   const buildList = () => {
     for (let i = 0; i <= props.cardObj.listAnswer.length - 1; i++) {
       list.push(
-        <li className='list-group-item'>{props.cardObj.listAnswer[i]}</li>
+        <li className='list-group-item' key={i}>
+          {props.cardObj.listAnswer[i]}
+        </li>
       )
     }
   }

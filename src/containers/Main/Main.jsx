@@ -4,7 +4,6 @@ import './Main.css'
 import CardList from '../../components/CardList/CardList'
 let newCount = 0
 let newScore = 0
-localStorage.setItem('cardIndex', 0)
 const audioPlus = new Audio(
   'https://www.freesoundslibrary.com/wp-content/uploads/2021/07/bicycle-bell-ding-sound-effect.mp3'
 )
@@ -24,12 +23,12 @@ const Main = () => {
   const [score, setScore] = useState(0)
   const [firstCard, setFirstCard] = useState(false)
   const [lastCard, setLastCard] = useState(false)
+  const [jump, setJump] = useState()
 
   const increment = () => {
     setReveal(false)
     setFirstCard(false)
     newCount++
-    localStorage.setItem('cardIndex', newCount)
     if (newCount === content.length) {
       newCount--
       setLastCard(true)
@@ -45,7 +44,6 @@ const Main = () => {
     if (newCount === -1) {
       newCount++
       setFirstCard(true)
-      localStorage.setItem('cardIndex', newCount)
       return
     }
     setCount(newCount)
@@ -142,11 +140,7 @@ const Main = () => {
           )}
           {/* render a card list if content type = 'list' */}
           {(reveal === true) & (content[count].type === 'list') ? (
-            <CardList
-              id={content[count].id}
-              listCount={content[count].listAnswer.length}
-              cardObj={content[count]}
-            />
+            <CardList id={content[count].id} cardObj={content[count]} />
           ) : (
             <p></p>
           )}
@@ -210,6 +204,34 @@ const Main = () => {
         >
           Reset
         </button>
+        <br />
+        {/* <div className='input-group mb-3 input-group-sm'>
+          <button
+            className='btn btn-primary'
+            style={{ marginTop: '10%' }}
+            type='button'
+            // onClick
+            // {...() => {
+            //   setCount(jump)
+            // }}
+          >
+            Jump to card
+          </button>
+          <input
+            style={{ marginTop: '10%' }}
+            type='number'
+            className='form-control'
+            placeholder='##'
+            value='card'
+            onChange={e => {
+              if (e.target.value > 0) {
+                setJump(e.target.value - 1)
+                console.log(jump)
+              }
+              return
+            }}
+          />
+        </div> */}
       </div>
     </div>
   )
