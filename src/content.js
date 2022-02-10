@@ -386,7 +386,44 @@ const content = [
       '- Subresources > Amazon S3 uses the subresource mechanism to store object-specific additional information. Because subresources are subordinates to objects, they are always associated with some other entity such as an object or a bucket.',
       '- Access control information > You can control access to the objects you store in Amazon S3. Amazon S3 supports both the resource-based access control, such as an access control list (ACL) and bucket policies, and user-based access control.'
     ]
+  },
+  {
+    id: 58,
+    type: 'list',
+    question:
+      'What are the 3 types of access policy options available for Amazon S3?',
+    listAnswer: [
+      '1. resource based - Access policies that you attach to your resources (buckets and objects)',
+      '2. user based - using IAM to attach access policies to a user',
+      '3. access control list (ACL) - grant basic read and write access to other accounts'
+    ]
+  },
+  {
+    id: 59,
+    question:
+      'The Amazon S3 _____ _____ _____ feature provides settings for access points, buckets, and accounts to help you manage public access to Amazon S3 resources. By default, new buckets, access points, and objects dont allow this type of access.',
+    answer: 'Block Public Access'
+  },
+  {
+    id: 60,
+    question:
+      'This feature of Amazon S3 is a means of keeping multiple variants of an object in the same bucket. You can use it to preserve, retrieve, and restore every version of every object stored in your buckets. With it you can recover more easily from both unintended user actions and application failures. ',
+    answer: 'Versioning'
   }
 ]
 
 export default content
+
+const template = [
+  {
+    id: 1,
+    question: 'question',
+    answer: 'answer'
+  },
+  {
+    id: 2,
+    type: 'list',
+    question: 'question',
+    listAnswer: ['a1', 'a2', 'a3']
+  }
+]
