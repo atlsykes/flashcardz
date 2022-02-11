@@ -409,6 +409,81 @@ const content = [
     question:
       'This feature of Amazon S3 is a means of keeping multiple variants of an object in the same bucket. You can use it to preserve, retrieve, and restore every version of every object stored in your buckets. With it you can recover more easily from both unintended user actions and application failures. ',
     answer: 'Versioning'
+  },
+  {
+    id: 61,
+    question:
+      '___________ enables automatic, asynchronous copying of objects across Amazon S3 buckets. Buckets that are configured for object ____________ can be owned by the same AWS account or by different accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can be in different AWS Regions or within the same Region as the source bucket.',
+    answer: 'Replication'
+  },
+  {
+    id: 62,
+    type: 'list',
+    question: 'What are the 5 main types of storage classes for Amazon S3?',
+    listAnswer: [
+      '- S3 Standard — The default storage class. If you do not specify the storage class when you upload an object, Amazon S3 assigns the S3 Standard storage class.',
+      '- Reduced Redundancy — The Reduced Redundancy Storage (RRS) storage class is designed for noncritical, reproducible data that can be stored with less redundancy than the S3 Standard storage class.',
+      '- S3 Intelligent-Tiering is an Amazon S3 storage class designed to optimize storage costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead.',
+      '- The S3 Standard-IA and S3 One Zone-IA storage classes are designed for long-lived and infrequently accessed data. (IA)',
+      '- The S3 Glacier Instant Retrieval, S3 Glacier Flexible Retrieval, and S3 Glacier Deep Archive storage classes are designed for low-cost data archiving. '
+    ]
+  },
+  {
+    id: 63,
+    question:
+      'What storage classes offer the same durability and resiliency as the other multi-AZ Amazon S3 storage classes, but, stored objects are not available for real-time access. Their intended storage time length is much longer (years) and data retrieval can anywhere between minutes and hours.',
+    answer: 'Amazon Glacier & Glacier Deep Archive'
+  },
+  {
+    id: 64,
+    question:
+      'What S3 feature can help prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely and allows for use of the WORM model (write once read many)?',
+    answer: 'S3 object lock'
+  },
+  {
+    id: 65,
+    question: 'question',
+    answer: 'answer'
+  },
+  {
+    id: 66,
+    question:
+      'What S3 feature allows you to easily deploy and enforce compliance controls for individual S3 Glacier vaults with a policy. You can specify controls such as “write once read many” (WORM) in a policy and lock the policy from future edits. Once locked, the policy can no longer be changed.',
+    answer: 'S3 Glacier Vault Lock'
+  },
+  {
+    id: 67,
+    type: 'list',
+    question:
+      'Data protection refers to protecting data while in-transit (as it travels to and from Amazon S3) and at rest (while it is stored on disks in Amazon S3 data centers). You can protect data in transit using Secure Socket Layer/Transport Layer Security (SSL/TLS) or client-side encryption. What are 2 options for protecting data at rest in Amazon S3?',
+    listAnswer: [
+      '- Server-Side Encryption – Request Amazon S3 to encrypt your object before saving it on disks in its data centers and then decrypt it when you download the objects.',
+      '- Client-Side Encryption – Encrypt data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, the encryption keys, and related tools.'
+    ]
+  },
+  {
+    id: 68,
+    question:
+      'Which service helps customers who need to run operations in austere, non-data center environments, and in locations where there is no consistent network connectivity? You can use these devices to locally and cost-effectively access the storage and compute power of the AWS Cloud in places where an internet connection might not be an option.',
+    answer: 'AWS Snow family'
+  },
+  {
+    id: 69,
+    question:
+      'Which service service uses physical storage devices to transfer large amounts of data between Amazon Simple Storage Service (Amazon S3) and your onsite data storage location at faster-than-internet speeds, and is intended for large data transfers?',
+    answer: 'AWS Snowball'
+  },
+  {
+    id: 70,
+    question:
+      'What is a portable, rugged, and secure device for edge computing and data transfer and can have either 8 or 15TB of data storage?',
+    answer: 'AWS Snowcone'
+  },
+  {
+    id: 71,
+    question:
+      'What service moves up to 100 PB of data in a 45-foot long ruggedized shipping container and is ideal for multi-petabyte or Exabyte-scale digital media migrations and data center shutdowns?',
+    answer: 'AWS Snowmobile'
   }
 ]
 
