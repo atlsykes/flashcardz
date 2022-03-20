@@ -442,8 +442,10 @@ const content = [
   },
   {
     id: 65,
-    question: 'question',
-    answer: 'answer'
+    question:
+      'When paying for object storage in S3, what are the rate considerations?',
+    answer:
+      "The rate you’re charged depends on your objects' size, how long you stored the objects during the month, and the storage class."
   },
   {
     id: 66,

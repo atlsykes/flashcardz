@@ -69,6 +69,7 @@ const Main = () => {
     setReveal(false)
     setCount(parseInt(cardNumber) - 1)
     newCount = parseInt(cardNumber) - 1
+    console.log(`newCount = ${newCount}`)
   }
 
   return (
@@ -76,14 +77,14 @@ const Main = () => {
       <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
         {firstCard === true ? (
           <div
-            class='alert alert-warning'
+            className='alert alert-warning'
             role='alert'
             style={{ textAlign: 'center' }}
           >
             You have reached the beginning!
             <button
               type='button'
-              class='btn btn-warning'
+              className='btn btn-warning'
               style={{ marginLeft: '20px' }}
               onClick={() => {
                 setFirstCard(false)
@@ -179,14 +180,14 @@ const Main = () => {
           <div className='input-group mb-3 input-group-sm'>
             <button
               className='btn btn-primary'
-              style={{ marginTop: '10%', marginLeft: '12%' }}
+              style={{ marginLeft: '12%' }}
               type='submit'
               onSubmit={handleSubmit}
             >
               Jump to card
             </button>
             <input
-              style={{ marginTop: '10%', maxWidth: '60px' }}
+              style={{ maxWidth: '60px' }}
               type='number'
               min='1'
               max={content.length}
@@ -201,7 +202,7 @@ const Main = () => {
         </form>
         <span>
           <button
-            style={{ marginRight: '20%' }}
+            style={{ marginRight: '20%', marginBottom: '10px' }}
             type='button'
             className='btn btn-success'
             onClick={() => {
@@ -213,6 +214,7 @@ const Main = () => {
             +
           </button>
           <button
+            style={{ marginBottom: '10px' }}
             type='button'
             className='btn btn-danger'
             onClick={() => {
@@ -227,16 +229,15 @@ const Main = () => {
           >
             -
           </button>
+          <button
+            style={{ marginLeft: '20%' }}
+            type='button'
+            className='btn btn-warning'
+            onClick={reset}
+          >
+            Reset
+          </button>
         </span>
-        <br />
-        <button
-          style={{ marginTop: '10%' }}
-          type='button'
-          className='btn btn-warning'
-          onClick={reset}
-        >
-          Reset
-        </button>
       </div>
     </div>
   )

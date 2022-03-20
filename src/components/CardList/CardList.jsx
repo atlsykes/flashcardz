@@ -1,4 +1,5 @@
 import React from 'react'
+import './CardList.css'
 
 const CardList = props => {
   const list: JSX.Element[] = []
@@ -16,7 +17,7 @@ const CardList = props => {
 
   return (
     <div>
-      <div className='card' style={{ width: '40rem', textAlign: 'left' }}>
+      <div className='cardList'>
         <ul className='list-group list-group-flush'>{list}</ul>
       </div>
     </div>
