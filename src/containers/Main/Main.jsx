@@ -66,12 +66,9 @@ const Main = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    if (cardNumber - 1 >= content.length) {
-      setLastCard(true)
-      return
-    }
     setReveal(false)
-    setCount(cardNumber - 1)
+    setCount(parseInt(cardNumber) - 1)
+    newCount = parseInt(cardNumber) - 1
   }
 
   return (
@@ -166,7 +163,6 @@ const Main = () => {
         >
           Prev
         </button>
-
         <button
           style={{ marginBottom: '10%' }}
           type='button'
@@ -175,7 +171,34 @@ const Main = () => {
         >
           Next
         </button>
-        <br />
+        <form
+          onSubmit={e => {
+            handleSubmit(e, { cardNumber })
+          }}
+        >
+          <div className='input-group mb-3 input-group-sm'>
+            <button
+              className='btn btn-primary'
+              style={{ marginTop: '10%', marginLeft: '12%' }}
+              type='submit'
+              onSubmit={handleSubmit}
+            >
+              Jump to card
+            </button>
+            <input
+              style={{ marginTop: '10%', maxWidth: '60px' }}
+              type='number'
+              min='1'
+              max={content.length}
+              className='form-control'
+              placeholder='##'
+              value={cardNumber}
+              onChange={e => {
+                setCardNumber(e.target.value)
+              }}
+            />
+          </div>
+        </form>
         <span>
           <button
             style={{ marginRight: '20%' }}
@@ -214,36 +237,6 @@ const Main = () => {
         >
           Reset
         </button>
-        <br />
-        <form
-          onSubmit={e => {
-            handleSubmit(e, { cardNumber })
-          }}
-        >
-          <div className='input-group mb-3 input-group-sm'>
-            <button
-              className='btn btn-primary'
-              style={{ marginTop: '10%', marginLeft: '12%' }}
-              type='submit'
-              onSubmit={handleSubmit}
-            >
-              Jump to card
-            </button>
-            <input
-              style={{ marginTop: '10%', maxWidth: '60px' }}
-              type='number'
-              min='1'
-              max={content.length}
-              className='form-control'
-              placeholder='##'
-              value={cardNumber}
-              onChange={e => {
-                setCardNumber(e.target.value)
-                console.log(`cardNumber = ${cardNumber}`)
-              }}
-            />
-          </div>
-        </form>
       </div>
     </div>
   )

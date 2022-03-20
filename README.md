@@ -1,6 +1,6 @@
 # Flashcardz
 
-![license badge](https://img.shields.io/badge/license-MIT-brightgreen) ![favicon](./public/favicon.ico) ![react favicon](./public/favicon_bak.ico)
+![license badge](https://img.shields.io/badge/license-MIT-brightgreen) ![favicon](./public/favicon.ico) <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap logo" width="60" height="50">![react favicon](./public/react-favicon.ico)
 
 Flash card web app that I created out of boredom to help with studying for the AWS Cloud Practitioner Certification Exam.
     
@@ -23,8 +23,9 @@ Flash card web app that I created out of boredom to help with studying for the A
 2. Read question on card and click 'show' to reveal answer.
 3. Scoring in manual, click '+' if guess right answer. '-' provided in case you accidentally clicked '+'.
 4. Use 'Next' and 'Prev' buttons to navigate through card deck.
-5. Use 'Reset' to return to first card and reset score to 0.
-6. That's it, enjoy!
+5. Jump to a specific card number of interest using the 'Jump to Card' input.
+6. Use 'Reset' to return to first card, reset score to 0, and reset card jump input to 1.
+7. That's it, enjoy!
     
 ## License
     
@@ -53,7 +54,7 @@ SOFTWARE.
 ## Contributions
     
 - Reactjs
-- Bootstrap CDN
+- Bootstrap 5
     
 ## Tests
     
