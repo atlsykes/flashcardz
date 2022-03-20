@@ -2,6 +2,8 @@ import content from '../../content'
 import React, { useState } from 'react'
 import './Main.css'
 import CardList from '../../components/CardList/CardList'
+import backgroundVideo from './animatedCloudsVideo.mp4'
+
 let newCount = 0
 let newScore = 0
 const audioPlus = new Audio(
@@ -74,6 +76,9 @@ const Main = () => {
 
   return (
     <div className='main'>
+      <video loop autoPlay muted id='video'>
+        <source src={backgroundVideo} type='video/mp4' />
+      </video>
       <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
         {firstCard === true ? (
           <div
