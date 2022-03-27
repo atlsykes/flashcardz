@@ -15,9 +15,9 @@ const audioMinus = new Audio(
 const audioReset = new Audio(
   'https://www.freesoundslibrary.com/wp-content/uploads/2018/01/ding-sound-effect.mp3'
 )
-const audioStart = new Audio(
-  'https://www.freesoundslibrary.com/wp-content/uploads/2020/03/dark-transition-sound-effect.mp3'
-)
+// const audioStart = new Audio(
+//   'https://www.freesoundslibrary.com/wp-content/uploads/2020/03/dark-transition-sound-effect.mp3'
+// )
 
 const Main = () => {
   const [count, setCount] = useState(0)

@@ -491,7 +491,7 @@ const content = [
 
 export default content
 
-const template = [
+/* const template = [
   {
     id: 1,
     question: 'question',
@@ -504,3 +504,4 @@ const template = [
     listAnswer: ['a1', 'a2', 'a3']
   }
 ]
+*/
