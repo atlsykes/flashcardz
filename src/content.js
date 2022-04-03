@@ -343,7 +343,7 @@ const content = [
       '1. An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. It monitors the health of its registered targets, and routes traffic only to the healthy targets. (HTTP/HTTPS).',
       '2. A Network Load Balancer functions at the fourth layer of the Open Systems Interconnection (OSI) model. It can handle millions of requests per second.(TCP)',
       '3. A Classic A load balancer distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones. This increases the fault tolerance of your applications. (original)',
-      `4. A Gateway Load Balancer operates at the third layer of the Open Systems Interconnection (OSI) model, the network layer. It listens for all IP packets across all ports and forwards traffic to the target group that's specified in the listener rule. It maintains stickiness of flows to a specific target appliance using 5-tuple (for TCP/UDP flows) or 3-tuple (for non-TCP/UDP flows).`
+      "4. A Gateway Load Balancer operates at the third layer of the Open Systems Interconnection (OSI) model, the network layer. It listens for all IP packets across all ports and forwards traffic to the target group that's specified in the listener rule. It maintains stickiness of flows to a specific target appliance using 5-tuple (for TCP/UDP flows) or 3-tuple (for non-TCP/UDP flows)."
     ]
   },
   {
@@ -486,22 +486,61 @@ const content = [
     question:
       'What service moves up to 100 PB of data in a 45-foot long ruggedized shipping container and is ideal for multi-petabyte or Exabyte-scale digital media migrations and data center shutdowns?',
     answer: 'AWS Snowmobile'
+  },
+  {
+    id: 73,
+    question: 'What is a web service that makes it easier to set up, operate, and scale a relational database in the cloud that also provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks?',
+    answer: 'Amazon RDS'
+  },
+  {
+    id: 74,
+    question: 'Which database service has MongoDB capability?',
+    answer: 'DocumentDB'
+  },
+  {
+    id: 75,
+    question: 'What is the name of a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability?',
+    answer: 'DynamoDB'
+  },
+  {
+    id: 76,
+    question: 'Which service provides provides a high performance, resizable, and cost-effective in-memory cache, while removing complexity associated with deploying and managing a distributed cache environment. ',
+    answer: 'ElastiCache'
+  },
+  {
+    id: 77,
+    question: 'Which database service is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets?',
+    answer: 'Neptune'
+  },
+  {
+    id: 78,
+    question: 'What is the name of a fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools?',
+    answer: 'Redshift'
+  },
+  {
+    id: 79,
+    question: 'What is a main advantage of installing a database on an EC2 instance vs. an on prem. server?',
+    answer: 'For EC2, AWS manages the layers below the operating system.'
+  },
+  {
+    id: 80,
+    question: 'What is a disadvantage on installing a database on an EC2 instance?',
+    answer: "Amazon EC2 isn't a fully managed service. Thus, when you run a database on Amazon EC2, you're more prone to user errors. For example, when you update the operating system or database software manually, you might accidentally cause application downtime. You might spend hours checking every change to identify and fix an issue."
   }
 ]
 
 export default content
 
-/* const template = [
-  {
+/*  const template = [
+    {
     id: 1,
     question: 'question',
     answer: 'answer'
-  },
-  {
+    },
+    {
     id: 2,
     type: 'list',
     question: 'question',
     listAnswer: ['a1', 'a2', 'a3']
-  }
-]
-*/
+    }
+    ] */

@@ -80,7 +80,8 @@ const Main = () => {
         <source src={backgroundVideo} type='video/mp4' />
       </video>
       <div className='col-12' style={{ textAlign: 'left', marginLeft: '2%' }}>
-        {firstCard === true ? (
+        {firstCard === true
+          ? (
           <div
             className='alert alert-warning'
             role='alert'
@@ -98,10 +99,12 @@ const Main = () => {
               X
             </button>
           </div>
-        ) : (
+            )
+          : (
           <div></div>
-        )}
-        {lastCard === true ? (
+            )}
+        {lastCard === true
+          ? (
           <div
             className='alert alert-warning'
             role='alert'
@@ -119,9 +122,10 @@ const Main = () => {
               X
             </button>
           </div>
-        ) : (
+            )
+          : (
           <div></div>
-        )}
+            )}
         <h5>Score: {newScore}</h5>
         <i>cards: {content.length}</i>
         <br />
@@ -143,20 +147,27 @@ const Main = () => {
           <br />
           <br />
           {/* render a basic answer if no content type is present */}
-          {reveal === true ? (
-            <h6 className='card-text' style={{ textAlign: 'left' }}>
+          {reveal === true
+            ? (
+            <h6
+            className='card-text'
+            style={{ textAlign: 'left' }}>
               {' '}
               {content[count].answer}
-            </h6>
-          ) : (
+              </h6>
+              )
+            : (
             <p></p>
-          )}
+              )}
           {/* render a card list if content type = 'list' */}
-          {(reveal === true) & (content[count].type === 'list') ? (
+          {(reveal === true) &
+            (content[count].type === 'list')
+            ? (
             <CardList id={content[count].id} cardObj={content[count]} />
-          ) : (
+              )
+            : (
             <p></p>
-          )}
+              )}
         </div>
       </div>
       <br />
