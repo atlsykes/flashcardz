@@ -488,44 +488,49 @@ const content = [
     answer: 'AWS Snowmobile'
   },
   {
-    id: 73,
+    id: 72,
     question: 'What is a web service that makes it easier to set up, operate, and scale a relational database in the cloud that also provides cost-efficient, resizable capacity for an industry-standard relational database and manages common database administration tasks?',
     answer: 'Amazon RDS'
   },
   {
-    id: 74,
+    id: 73,
     question: 'Which database service has MongoDB capability?',
     answer: 'DocumentDB'
   },
   {
-    id: 75,
+    id: 74,
     question: 'What is the name of a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability?',
     answer: 'DynamoDB'
   },
   {
-    id: 76,
+    id: 75,
     question: 'Which service provides provides a high performance, resizable, and cost-effective in-memory cache, while removing complexity associated with deploying and managing a distributed cache environment. ',
     answer: 'ElastiCache'
   },
   {
-    id: 77,
+    id: 76,
     question: 'Which database service is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets?',
     answer: 'Neptune'
   },
   {
-    id: 78,
+    id: 77,
     question: 'What is the name of a fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools?',
     answer: 'Redshift'
   },
   {
-    id: 79,
+    id: 78,
     question: 'What is a main advantage of installing a database on an EC2 instance vs. an on prem. server?',
     answer: 'For EC2, AWS manages the layers below the operating system.'
   },
   {
-    id: 80,
+    id: 79,
     question: 'What is a disadvantage on installing a database on an EC2 instance?',
     answer: "Amazon EC2 isn't a fully managed service. Thus, when you run a database on Amazon EC2, you're more prone to user errors. For example, when you update the operating system or database software manually, you might accidentally cause application downtime. You might spend hours checking every change to identify and fix an issue."
+  },
+  {
+    id: 80,
+    question: 'What are the additional fees for Amazon EC2 scaling?',
+    answer: 'none'
   }
 ]
 
