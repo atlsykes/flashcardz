@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/flashcardz/static/css/main.43ab91a7.css",
-    "main.js": "/flashcardz/static/js/main.7ad052a6.js",
-    "static/js/787.8209036f.chunk.js": "/flashcardz/static/js/787.8209036f.chunk.js",
+    "main.js": "/flashcardz/static/js/main.f8cb0d00.js",
+    "static/js/453.1cdf38c1.chunk.js": "/flashcardz/static/js/453.1cdf38c1.chunk.js",
     "static/media/animatedCloudsVideo.mp4": "/flashcardz/static/media/animatedCloudsVideo.9841a6356d4b66631ccf.mp4",
     "index.html": "/flashcardz/index.html",
     "main.43ab91a7.css.map": "/flashcardz/static/css/main.43ab91a7.css.map",
-    "main.7ad052a6.js.map": "/flashcardz/static/js/main.7ad052a6.js.map",
-    "787.8209036f.chunk.js.map": "/flashcardz/static/js/787.8209036f.chunk.js.map"
+    "main.f8cb0d00.js.map": "/flashcardz/static/js/main.f8cb0d00.js.map",
+    "453.1cdf38c1.chunk.js.map": "/flashcardz/static/js/453.1cdf38c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43ab91a7.css",
-    "static/js/main.7ad052a6.js"
+    "static/js/main.f8cb0d00.js"
   ]
 }
