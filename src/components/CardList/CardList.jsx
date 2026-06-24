@@ -1,4 +1,4 @@
-import "./CardList.css";
+import './CardList.css';
 
 const CardList = (props) => {
   const list: JSX.Element[] = [];

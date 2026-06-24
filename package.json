@@ -1,6 +1,6 @@
 {
   "name": "flashcardz",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://atlsykes.github.io/flashcardz",
   "private": true,
   "dependencies": {
@@ -16,18 +16,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "lint": "eslint src/**/*.js src/**/*.jsx"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -42,12 +35,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
-    "eslint-plugin-react": "^7.29.4",
     "gh-pages": "^6.3.0"
   }
 }
